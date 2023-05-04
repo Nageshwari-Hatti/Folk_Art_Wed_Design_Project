@@ -118,6 +118,12 @@ input[type=submit] {
     margin-top: 6px;
 }
 
+input[type=file] {
+    height: 50px;
+    width: 500px;
+}
+
+
 
 fieldset{
     border: 3px solid rgb(46, 45, 45);
