@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>POP CORN</title>
+	<style type="text/css">
+		.tab, .th1, .td1{
+			border: 2px solid black;
+		}
+	</style>
+</head>
+<body>
+
+	<form method="post" action="cornp.php">
+		<h1 style="size: 40px; color: red;">Welcome To Milenium Gymnastics Booster Club Popcorn Sales</h1>
+		<br>
+
+	<table>
+			<tr>
+				<td>Byer's Name</td>
+				<td><input type="text" name="name"></td>
+			</tr>
+			<tr>
+				<td>Street Address</td>
+				<td><input type="textarea" name="address"></td>
+			</tr>
+			<tr>
+				<td>City, State, Zip</td>
+				<td><input type="text" name="csz"></td>
+			</tr>
+		</table>
+
+
+
+		<h1 style="size: 25px; color: red;">Order Details</h1>
+		<table class="tab">
+			<tr>
+				<th class="th1">PRODUCT NAME</th>
+				<th class="th1">PRICE</th>
+				<th class="th1">Quantity</th>
+			</tr>
+			<tr>
+				<td class="td1">Unpopped Popcorn (1lb)</td>
+				<td class="td1">$3.00</td>
+				<td class="td1"><input type="number" name="unpopped"></td>
+			</tr>
+			<tr>
+				<td class="td1">Caramel Popcorn (2lb Canister)</td>
+				<td class="td1">$3.50</td>
+				<td class="td1"><input type="number" name="caramel"></td>
+			</tr>
+			<tr>
+				<td class="td1">Caramel Nut Popcorn (2lb Canister)</td>
+				<td class="td1">$4.50</td>
+				<td class="td1"><input type="number" name="caramelnut"></td>
+			</tr>
+			<tr>
+				<td class="td1">Toffey Nut Popcorn (2lb Canister)</td>
+				<td class="td1">$5.00</td>
+				<td class="td1"><input type="number" name="toffey"></td>
+			</tr>
+		</table>
+		<br>
+
+
+		<h1 style="size: 25px; color: red;">Payment Methods :</h1> 
+		<input type="radio" name="pay" value="1">Visa &emsp;
+		<input type="radio" name="pay" value="1">Master Card &emsp;
+		<input type="radio" name="pay" value="1">Discover &emsp;
+		<input type="radio" name="pay" value="1">Check &emsp;
+		<br><br><br><br>&emsp;
+		<input type="submit" name="submit" value="Submit Order">&emsp;&nbsp;&nbsp;
+		<input type="reset" name="reset" value="Clear Order From">
+</body>
+</html>

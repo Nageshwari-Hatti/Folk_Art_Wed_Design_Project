@@ -1,0 +1,70 @@
+div{
+    background-color: rgb(160, 218, 241);
+    padding: 30px;   
+}
+
+
+h1{
+    font-size: 50px;
+    font-weight: bold;
+    font-family: serif, 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS';
+}
+
+.content_1 {
+    font-size: 50px;
+    color: rgb(255, 51, 0);
+    text-align: center;
+    text-decoration: underline rgb(160, 218, 241);
+}
+
+h1 {
+    text-align: center;
+    color: red;
+    text-decoration: underline black;
+}
+
+img{
+    align-items: center;
+    height: 610px;
+    width: 35%;
+    float: left;
+    margin-left: 35px;
+    border: 10px solid black;
+    border-radius: 12px;
+    border-style: double;
+
+}
+
+.art_1{
+    border: 12px solid black;
+    border-radius: 100px;
+    border-style: double;
+    background-color: orange;
+    width: 80%;
+    height: 800px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+p{
+    font-size: 22px;
+    text-align: justify;
+}
+
+.para_1 {
+    border: 10px solid black;
+    border-radius: 12px;
+    border-style: double;
+    background-color: white;
+    width: 740px;
+    height: 550px;
+    margin-right: 400px;
+    margin-left: 600px;
+    background-position: right;
+    margin-right: 50px;
+    text-align: justify;
+    align-items: center;
+}
+
+figcaption {
+}

@@ -1,0 +1,394 @@
+<link rel="stylesheet" href="form.css">
+
+<div class="bodypart">
+    <div class='container'>
+        <h1>WEBPAGE SURVEY FORM</h1>
+        <br>
+        <div class="fms">
+            <form method="post" name="myForm" action="form.php" onreset="myFunctionfm()"
+                onsubmit="return validateemail();">
+
+                <div style='margin-left: 35px; margin-right: 35px'>
+
+                    <div class="ele_1" style="margin-top: 35px">
+                        <div class="ele_2">
+                            <label for="fname">First Name:</label>
+                        </div>
+                        <div class="ele_3">
+                            <input type="text" name="fname" placeholder="Enter your first name..." id="name1"
+                                onblur="myFunction()" onsubmit="return validateFormN();" required />
+                        </div>
+                    </div>
+                    <script>
+                        function validateFormN() {
+                            var x = document.forms["myForm"]["fname"].value;
+                            if (x == "" || x == null) {
+                                alert("Name must be filled out");
+                                return false;
+                            }
+                        }
+                    </script>
+
+                    <div class="ele_1">
+                        <div class="ele_2">
+                            <label for="mname">Middle Name:</label>
+                        </div>
+                        <div class="ele_3">
+                            <input type="text" name="mname" placeholder="Enter your middle name..." id="name2"
+                                onblur="myFunction()" required />
+                        </div>
+                    </div>
+
+
+                    <div class="ele_1">
+                        <div class="ele_2">
+                            <label for="lname">Last Name:</label>
+                        </div>
+                        <div class="ele_3">
+                            <input type="text" name="lname" placeholder="Enter your last name..." id="name3"
+                                onblur="myFunction()" required />
+                        </div>
+                    </div>
+
+                    <p style="font-size: 25px;">When we leave the input field, a function is triggered which transforms
+                        the input text to upper case using "onblur" event.</p>
+
+                    <script>
+                        function myFunction() {
+                            var x = document.getElementById("name1");
+                            var y = document.getElementById("name2");
+                            var z = document.getElementById("name3");
+                            x.value = x.value.toUpperCase();
+                            y.value = y.value.toUpperCase();
+                            z.value = z.value.toUpperCase();
+                        }
+                    </script>
+
+
+
+                    <div class="ele_1">
+                        <div class="ele_2">
+                            <label for="address">Address:</label>
+                        </div>
+                        <div class="ele_3">
+                            <input type="text" name="address" placeholder="Permanent Address" id="ep"
+                                onfocus="myFunctionep(this.id)" onblur="myFunctionep1(this.id)" required />
+                        </div>
+                    </div>
+
+
+                    <div class="ele_1">
+                        <div class="ele_2">
+                            <label for="mail"> Email:</label>
+                        </div>
+                        <div class="ele_3">
+                            <input type="email" name="email" placeholder="example@gmail.com" id="ep1"
+                                onfocus="myFunctionep(this.id)" onblur="myFunctionep1(this.id)" required />
+                        </div>
+                    </div>
+                    <p id=message2></p>
+                    <script>
+                        function validateemail() {
+                            var x = document.myForm.email.value;
+                            var atposition = x.indexOf("@");
+                            var dotposition = x.lastIndexOf(".");
+                            if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= x.length) {
+                                alert("Please enter a valid e-mail address using @ and .");
+                                return false;
+                            }
+                        }  
+                    </script>
+                    <p style="font-size: 20px;">Validation 1</p>
+
+                    <div class="ele_1">
+                        <div class="ele_2">
+                            <label for="phone">Phone Number:</label>
+                        </div>
+                        <div class="ele_3">
+                            <input type='number' name="phone" id="phone" placeholder="Enter your 10 digit mobile number"
+                                id="ep2" onfocus="myFunctionep(this.id)" onblur="myFunctionep1(this.id)"
+                                onkeyup="check(); return false;">
+                            <p id="message"></p>
+                        </div>
+                    </div>
+
+                    <script type="text/javascript">
+                        function check() {
+
+                            var phone = document.getElementById('phone');
+
+
+                            var message = document.getElementById('message');
+
+                            var goodColor = "#0C6";
+                            var badColor = "#FF9B37";
+
+                            if (phone.value.length != 10) {
+
+                                phone.style.backgroundColor = badColor;
+                                message.style.color = badColor;
+                                message.innerHTML = "required 10 digits, match requested format!"
+                            }
+                        }
+
+                        function myFunctionep1(x) {
+                            document.getElementById(message).style.color = "";
+                        }
+                    </script>
+                    <p style="font-size: 20px;">Validation 2</p>
+
+                    <p style="font-size: 25px;">A function is triggered when one of the input fields get focus. The
+                        function changes the background-color of the input field using "onfocus" event.</p>
+
+                    <script>
+                        function myFunctionep(x) {
+                            document.getElementById(x).style.backgroundColor = "lightpink";
+                        }
+                        function myFunctionep1(x) {
+                            document.getElementById(x).style.backgroundColor = "";
+                        }
+                    </script>
+
+
+                    <div class="ele_1">
+                        <div class="ele_2">
+                            <label for="country">Country:</label>
+                        </div>
+                        <div class="ele_3" class="custom-select" style="width: 250px">
+                            <select id="country" name="country" onchange="myFunctions()">
+                                <option value="-1">[Choose Your Country]</option>
+                                <option value="INDIA">India</option>
+                                <option value="AUSTRALIA">Australia</option>
+                                <option value="BELGIUM">Belgium</option>
+                                <option value="BRAZIL">Brazil</option>
+                                <option value="CANADA">Canada</option>
+                                <option value="GREECE">Greece</option>
+                                <option value="UK">UK</option>
+                                <option value="USA">USA</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <p style="font-size: 25px;">When you select a country, a function is triggered which outputs the
+                        value of the selected country using "onchange" event.</p>
+
+                    <p id="demos"></p>
+
+                    <script>
+                        function myFunctions() {
+                            var x = document.getElementById("country").value;
+                            document.getElementById("demos").innerHTML = "You selected: " + x;
+                        }
+                    </script>
+
+
+                    <div class="ele_1">
+                        <div class="ele_2">
+                            <label for="date-label">Date of Birth:</label>
+                        </div>
+                        <div class="ele_3">
+                            <input type="date" name="bday">
+                        </div>
+                    </div>
+
+
+                    <br>
+
+
+                    <div class="ele_1">
+                        <div class="ele_2">
+                            <label for="country">How Did You Discovered our WebSite?</label>
+                        </div>
+                        <div class="ele_3">
+                            &emsp; <input type='radio' name='media' value='Social Media' />Social Media<br>
+                            &emsp; <input type='radio' name='media' value='Advertising' />Advertising<br>
+                            &emsp; <input type='radio' name='media' value='Search Engine' />SearchEngine<br>
+                            &emsp; <input type='radio' name='media' value='Friend' />Friend<br>
+                            &emsp; <input type='radio' name='media' value='Other' />Other<br>
+                        </div>
+                    </div>
+
+
+                    <br>
+
+
+                    <div class="ele_1">
+                        <div class="ele_2">
+                            <label for="country">Which Field of Content/Contents Do You Like:</label>
+                        </div>
+                        <div class="ele_3">
+                            <label for="inp"></label>
+                            &nbsp;<input type="checkbox" name="inp" value="Home Page">Home Page <br>
+                            <label for="inp"></label>
+                            &nbsp;<input type="checkbox" name="inp" value="PDFs">PDFs <br>
+                            <label for="inp"></label>
+                            &nbsp;<input type="checkbox" name="inp" value="Landing Pages">Landing Pages<br>
+                            <label for="inp"></label>
+                            &nbsp;<input type="checkbox" name="inp" value="Contents">Contents <br>
+                            <label for="inp"></label>
+                            &nbsp;<input type="checkbox" name="inp" value="Coding Part">Coding Part <br>
+                            <label for="inp"></label>
+                            &nbsp;<input type="checkbox" name="inp" value="Forms">Forms <br>
+                            <label for="inp"></label>
+                            &nbsp;<input type="checkbox" name="inp" value="Tags">Tags <br>
+                            <label for="inp"></label>
+                            &nbsp;<input type="checkbox" name="inp" value="Blog Contents">Blog Contents <br>
+                            <label for="inp"></label>
+                            &nbsp;<input type="checkbox" name="inp" value="Images">Images <br>
+                            <label for="inp"></label>
+                            &nbsp;<input type="checkbox" name="inp" value="Payment Section">Payment Section <br><br>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div class="content_1">
+                    <div class="ele_1">
+                        <div class="ele_2">
+                            <label for="subject">Subject:</label>
+                        </div>
+                        <div class="ele_3">
+                            <textarea id="subject" name="subject" placeholder="Write something....."
+                                style="height: 150px"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+
+                <br>
+
+                <fieldset style="width: 800px; margin-right: auto; margin-left: auto;">
+
+                    <legend style="font-size: 30px; background-color: rgb(253, 169, 136); border-radius: 5px;">Uploading
+                        FILE</legend>
+                    <input type="file" id="file1" name="photo" onchange="return fileValidation()" />
+                    <div id="imagePreview1"></div>
+
+                    <script>
+                        function fileValidation() {
+                            var fileInput = document.getElementById('file1');
+                            var filePath = fileInput.value;
+                            var allowedExtensions = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+                            if (!allowedExtensions.exec(filePath)) {
+                                alert('Invalid file type upload jpg, jpeg, png or gif files');
+                                fileInput.value = '';
+                                return false;
+                            }
+                            else {
+                                if (fileInput.files && fileInput.files[0]) {
+                                    var reader = new FileReader();
+                                    reader.onload = function (e) {
+                                        document.getElementById(
+                                            'imagePreview1').innerHTML = '<img src="' + e.target.result + '"/>';
+                                    };
+                                    reader.readAsDataURL(fileInput.files[0]);
+                                }
+                            }
+                        }
+                    </script>
+                </fieldset>
+                <p style="font-size: 20px;">&emsp;&emsp;&emsp;Validation 3</p>
+
+
+                <br>
+
+
+                <div class="content_1">
+                    <div class="ele_1">
+                        <div class="ele_2">
+                            <label id="number-label" for="number">Enter Your Ratings for the Our Website :</label>
+                        </div> <br>
+                        <div class="ele_3">
+                            <input type="number" name="number" id="number" placeholder="Enter Rating...."
+                                onclick="return myFunction1()">
+                            <p id="demor"></p>
+                            <p> After inputting your rating enter one more time on input Field to get your entered
+                                option is right or wrong </p>
+
+                            <script>
+                                function myFunction1() {
+                                    // Get the value of the input field with id="numb"
+                                    let x = document.getElementById("number").value;
+                                    // If x is Not a Number or less than one or greater than 10
+                                    let text;
+                                    if (isNaN(x) || x < 0 || x > 5) {
+                                        text = "Input not valid";
+                                        alert("Enter value between 0 to 5");
+                                    } else {
+                                        text = "Input OK";
+                                    }
+                                    document.getElementById("demor").innerHTML = text;
+                                }       
+                            </script>
+
+                        </div>
+                    </div>
+                </div>
+                <p style="font-size: 20px;">&emsp;&emsp;&emsp;Validation 4</p>
+
+                <br>
+
+
+                <div class="content_1">
+                    <div class="ele_1">
+                        <div class="ele_2">
+                            <label for="country">Do You Like to Revisit this Website?</label>
+                        </div>
+                        <div class="ele_3"><br>
+                            <input type='radio' name='like' value='YES' />YES
+                            <input type='radio' name='like' value='NO' />NO
+                        </div>
+                    </div>
+                </div>
+
+
+                <br>
+
+
+                &emsp;&emsp;&emsp;
+                <input type="text"
+                    value="Select me!! This from is build with some Sort of HTML Code, CSS, Form Events And JavaScript Validations. And at last we have done this page is Redirecting to PHP Code Usage...!"
+                    onselect="myFunctionsel()">
+                <p style="font-size:25px;">&emsp; "The onselect" Evenet is triggered when some text is selected in the
+                    input field. The&emsp;&emsp; &emsp;&emsp;function shows a message.</p>
+
+
+                <br>
+
+
+                <script>
+                    function myFunctionsel() {
+                        alert("You have selected some text!");
+                    }
+                </script>
+
+
+                <input type="reset">
+                <script>
+                    function myFunctionfm() {
+                        alert("The form was reset");
+                    }
+                </script>
+
+                <p style="font-size:25px;">&emsp; "onreset" event is used to reset the Form.</p>
+
+
+                <div class="ele_1">
+                    <div class="ele_2">
+                        <div class="ele_3">
+                            <input type="submit" name="submit" id="sub" value="Submit">
+                        </div>
+                    </div>
+                </div>
+                <p style="font-size:25px;">&emsp; "onsubmit" event is used to reset the Form.</p>
+
+            </form>
+
+
+        </div>
+
+    </div>
+
+</div>

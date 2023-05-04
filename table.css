@@ -1,0 +1,66 @@
+.tablebody {
+    background-color: lightblue;
+}
+
+.map{
+    font-size: 70px;
+    text-align: center;
+    color: rgb(255, 145, 0);
+}
+
+.image_tab{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 800px;
+    width: 800px;
+    border:10px;
+    
+}
+
+
+.top{
+    font-size:25px;
+}
+
+.tab_1{
+    font-size:60px;
+    font-family: serif;
+    text-decoration: bold;
+    color: rgb(255, 145, 0);
+    text-decoration: underline red;
+    text-align: center;
+}
+
+table{
+    width:80%;
+    padding: 2px;
+    line-height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    border-color: lightblue;
+}
+
+table, th, td{
+    border: 3px solid rgb(31, 24, 20);
+    text-align: center;
+}
+
+
+th{
+    background-color: rgb(245, 109, 109);
+    line-height: 50px;
+    font-size:50px;
+    color: darkblue;
+}
+
+
+td{
+    background-color: rgb(248, 241, 136);
+    line-height: 50px;
+    font-size: 35px;
+}
+
+.row_1{
+    background-color: white;
+}
