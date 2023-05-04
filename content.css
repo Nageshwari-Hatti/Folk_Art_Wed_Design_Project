@@ -29,6 +29,8 @@ img{
     width: 35%;
     float: left;
     margin-left: 35px;
+    margin-right: 2px;
+    margin-top: 100px;
     border: 10px solid black;
     border-radius: 12px;
     border-style: double;
@@ -41,7 +43,7 @@ img{
     border-style: double;
     background-color: orange;
     width: 80%;
-    height: 800px;
+    height: 1000px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -56,10 +58,10 @@ p{
     border-radius: 12px;
     border-style: double;
     background-color: white;
-    width: 740px;
-    height: 550px;
+    width: 600px;
+    height: 750px;
     margin-right: 400px;
-    margin-left: 600px;
+    margin-left: 465px;
     background-position: right;
     margin-right: 50px;
     text-align: justify;
